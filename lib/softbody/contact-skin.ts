@@ -2,7 +2,7 @@
  * owns volume and motion; these constraints prevent fine contact DOFs from
  * stretching one triangle into a spike. Dihedral gradients follow Bridson,
  * as used by InteractiveComputerGraphics/PositionBasedDynamics (MIT).
- * See docs/superpowers/plans/2026-09-11-contact-surface-research.md. */
+ * See docs/physics.md. */
 import { createContactKernel } from './contact-kernel.ts';
 type Edge = {
   a: number;
