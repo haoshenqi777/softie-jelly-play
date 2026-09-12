@@ -1,1 +1,12 @@
-{"name":"softie-wasm-compiler","private":true,"type":"module","devDependencies":{"assemblyscript":"0.28.9"}}
+{
+  "name": "softie-wasm-compiler",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "assemblyscript": "0.28.9"
+  },
+  "packageManager": "bun@1.4.2",
+  "scripts": {
+    "build": "bun build.mjs && bun build-contact.mjs"
+  }
+}

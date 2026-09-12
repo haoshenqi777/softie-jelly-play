@@ -20,7 +20,7 @@
 
 ## 本地运行
 
-需要 Bun 1.4.2（版本固定在 `.bun-version`）和 Node.js 24。Bun 管理依赖和脚本；构建工具及现有测试继续使用 Node.js。
+需要 Bun 1.4.2（版本固定在 `.bun-version`）。依赖安装、开发、构建和测试均由 Bun 执行，无需安装 Node.js。
 
 ```sh
 git clone https://github.com/haoshenqi777/softie-jelly-play.git
@@ -38,7 +38,7 @@ bun run typecheck
 # 生产构建
 bun run build
 
-# 预览构建后的 Worker
+# 预览静态产物（默认 http://127.0.0.1:4173）
 bun run start
 ```
 
@@ -72,14 +72,18 @@ bun run test
 | `tools/wasm-compiler/` | 可选的物理内核编译源码 |
 | `tests/` | 输入、物理、材质、进食与回归测试 |
 
-项目使用 React、TypeScript、vinext 和 Cloudflare Worker 构建工具。依赖版本由 `bun.lock` 固定；第三方许可说明位于 `third-party-licenses/`。
+项目使用 React、TypeScript 和 vinext，在构建时生成静态 HTML 与导航数据。依赖版本由 `bun.lock` 固定；第三方许可说明位于 `third-party-licenses/`。
 
-GitHub Actions 在推送到 `main` 和提交 PR 时使用 Bun 执行冻结安装、类型检查、快速回归和生产构建。`bun run test` 调用现有 Node 测试运行器；请勿用 `bun test` 替代。
+GitHub Actions 在推送到 `main` 和提交 PR 时，在 Bun 容器中执行冻结安装、类型检查、快速回归、静态构建和 HTTP 检查。完整回归运行 `bun run test`，使用 4 个隔离的 Bun 工作进程；`bun test --timeout=300000 ./tests` 可顺序运行。单项模拟允许最多 5 分钟。
 
 ## 部署
 
-当前在线版本由 Sites 托管，`.openai/hosting.json` 保留其项目关联配置。GitHub 仓库用于保存和协作开发源代码；推送到本仓库不会自动更新在线站点。
+历史在线版本仍由 Sites 托管，本仓库已移除 Sites/Cloudflare Worker 发布集成。推送代码不会更新该在线版本。
 
-当前构建包含服务端 Worker，不能直接把仓库根目录作为 GitHub Pages 静态站点发布。后续若需要独立部署，应针对目标托管平台配置构建与发布流程。
+执行 `bun run build` 后，只发布 `dist/client/`。其中包含所有页面的 HTML、导航所需的 `.rsc` 数据，以及脚本、样式、模型、纹理和 WASM。`dist/server/` 仅供构建时预渲染使用，不应发布；线上无需 Bun、Node.js 或 Worker。
+
+静态托管需支持 HTTPS 和无扩展名页面路径（例如 `/lookdev` 对应 `lookdev.html`，根路径对应 `index.html`），保留 `.rsc` 文件，不要把资源请求重写为首页。当前链接及资源使用根路径，默认部署到域名根目录；部署到子目录需另行配置。更换域名不会自动迁移原域名的浏览器设置。
+
+`bun run start` 使用 Bun 提供本地静态预览；可通过 `PORT` 环境变量改变端口。`bun run check:static` 检查全部页面、导航数据与公开资源，且仅临时监听本机随机端口。
 
 早期实现及外观研究记录已归档至 [开发历史](docs/development-history.md)，其中的旧玩法和测量数据以对应日期为准。
