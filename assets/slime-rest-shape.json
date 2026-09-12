@@ -1,0 +1,296 @@
+{
+  "source_sha256": "c39d7a748bebd15c8fc3aef8ff6af0a280bd65d1823abcf1fb8cbd2af975f0c1",
+  "revision": "approved-turnaround-11",
+  "height": 2.25,
+  "vertical_scale": 1.03,
+  "projection_calibration": {
+    "radial_scale": 1.075,
+    "eye_spacing_scale": 0.94,
+    "face_height_offset": 0.045,
+    "note": "Image measurements are projected ratios, not scanned 3D dimensions. These geometry corrections compensate the unchanged perspective study camera."
+  },
+  "width": {
+    "belly_height": 0.34080717488789236,
+    "maximum_radius": 0.6681614349775785,
+    "belly_curvature": 3.1595605192735743,
+    "upper_knots": [
+      0.34080717488789236,
+      0.34080717488789236,
+      0.34080717488789236,
+      0.34080717488789236,
+      0.48,
+      0.62,
+      0.74,
+      0.84,
+      0.92,
+      0.97,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "upper_radius_squared_controls": [
+      0.4464397031912969,
+      0.4464397031912969,
+      0.4190928139377427,
+      0.339343747894087,
+      0.2245553123066366,
+      0.1155082510226693,
+      0.06268000681049533,
+      0.026404465639183167,
+      0.008413665067966572,
+      0.0
+    ],
+    "lower_radius_controls": [
+      0.3674887892376682,
+      0.43348275049554014,
+      0.499476711753412,
+      0.5752692501919618,
+      0.6681614349775785,
+      0.6681614349775785
+    ],
+    "lower_height_controls": [
+      0.0,
+      0.0,
+      0.0,
+      0.034080717488789214,
+      0.1874439461883408,
+      0.34080717488789236
+    ],
+    "continuity": "C2 at belly and all interior spline knots; horizontal rounded crown; centered rest axis",
+    "fit_error_px": {
+      "rms": 0.5469198525985874,
+      "max": 1.6451770817558442,
+      "scope": "symmetric half-width at equal normalized image heights; excludes bottom 10%; not perspective reconstruction"
+    },
+    "crown_samples": [
+      {
+        "height": 0.65,
+        "radius": 0.5490368687939214,
+        "slope_dr_dh": -0.7908297034175947,
+        "curvature": 1.5891724865549284
+      },
+      {
+        "height": 0.7,
+        "radius": 0.5053029804043468,
+        "slope_dr_dh": -0.9605235557152979,
+        "curvature": 1.3261228338842308
+      },
+      {
+        "height": 0.75,
+        "radius": 0.4526690244431928,
+        "slope_dr_dh": -1.1475723518394876,
+        "curvature": 1.0283569831162012
+      },
+      {
+        "height": 0.8,
+        "radius": 0.39157764868709705,
+        "slope_dr_dh": -1.277461952972625,
+        "curvature": 0.3213858699691165
+      },
+      {
+        "height": 0.85,
+        "radius": 0.3274312584703686,
+        "slope_dr_dh": -1.2606741284504341,
+        "curvature": 0.271606235258342
+      },
+      {
+        "height": 0.9,
+        "radius": 0.2640200391604663,
+        "slope_dr_dh": -1.3202298625808462,
+        "curvature": 0.9455817607407117
+      },
+      {
+        "height": 0.95,
+        "radius": 0.18838631014009974,
+        "slope_dr_dh": -1.80340569383014,
+        "curvature": 1.9272233062409516
+      },
+      {
+        "height": 0.97,
+        "radius": 0.14807914490116286,
+        "slope_dr_dh": -2.2850003583346767,
+        "curvature": 2.2424483995419346
+      }
+    ]
+  },
+  "depth": {
+    "belly_height": 0.31932773109243695,
+    "maximum_radius": 0.6029411764705882,
+    "belly_curvature": 2.8281740081500195,
+    "upper_knots": [
+      0.31932773109243695,
+      0.31932773109243695,
+      0.31932773109243695,
+      0.31932773109243695,
+      0.48,
+      0.62,
+      0.74,
+      0.84,
+      0.92,
+      0.97,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "upper_radius_squared_controls": [
+      0.363538062283737,
+      0.363538062283737,
+      0.3360784679311795,
+      0.26285735401938465,
+      0.1608043676664712,
+      0.0828852824055808,
+      0.04971061245163768,
+      0.020925907548796262,
+      0.006855596694509405,
+      0.0
+    ],
+    "lower_radius_controls": [
+      0.3316176470588235,
+      0.37944428427315474,
+      0.4272709214874859,
+      0.5299425921789468,
+      0.6029411764705882,
+      0.6029411764705882
+    ],
+    "lower_height_controls": [
+      0.0,
+      0.0,
+      0.0,
+      0.031932773109243695,
+      0.17563025210084032,
+      0.31932773109243695
+    ],
+    "continuity": "C2 at belly and all interior spline knots; horizontal rounded crown; centered rest axis",
+    "fit_error_px": {
+      "rms": 0.409464007814908,
+      "max": 0.9014258965640445,
+      "scope": "symmetric half-width at equal normalized image heights; excludes bottom 10%; not perspective reconstruction"
+    },
+    "crown_samples": [
+      {
+        "height": 0.65,
+        "radius": 0.4786878664070709,
+        "slope_dr_dh": -0.7967496326810596,
+        "curvature": 1.4998995027099489
+      },
+      {
+        "height": 0.7,
+        "radius": 0.4351879735304533,
+        "slope_dr_dh": -0.9379100260248351,
+        "curvature": 0.9671136055456344
+      },
+      {
+        "height": 0.75,
+        "radius": 0.3855013178746641,
+        "slope_dr_dh": -1.042148432309209,
+        "curvature": 0.5183853288752587
+      },
+      {
+        "height": 0.8,
+        "radius": 0.33213448101498105,
+        "slope_dr_dh": -1.0764874000895874,
+        "curvature": 0.11926531618106187
+      },
+      {
+        "height": 0.85,
+        "radius": 0.2800373857953978,
+        "slope_dr_dh": -0.9849410239903821,
+        "curvature": 0.7893766304484937
+      },
+      {
+        "height": 0.9,
+        "radius": 0.23100029378719183,
+        "slope_dr_dh": -1.037609020569652,
+        "curvature": 1.7543217395198518
+      },
+      {
+        "height": 0.95,
+        "radius": 0.16764652857962545,
+        "slope_dr_dh": -1.5819336492139955,
+        "curvature": 2.494432424223573
+      },
+      {
+        "height": 0.97,
+        "radius": 0.13211213772708968,
+        "slope_dr_dh": -2.0140669312704307,
+        "curvature": 2.6001677264917245
+      }
+    ]
+  },
+  "centerline": {
+    "x": 0,
+    "z": 0
+  },
+  "face": {
+    "features": [
+      {
+        "area": 2262,
+        "bounds_px": [
+          362,
+          423,
+          415,
+          477
+        ],
+        "name": "left_eye",
+        "center": [
+          -0.22982062780269058,
+          0.23542600896860988
+        ],
+        "width": 0.1210762331838565,
+        "height": 0.12331838565022421
+      },
+      {
+        "area": 327,
+        "bounds_px": [
+          470,
+          465,
+          515,
+          480
+        ],
+        "name": "mouth",
+        "center": [
+          0.0033632286995515697,
+          0.18497757847533633
+        ],
+        "width": 0.1031390134529148,
+        "height": 0.03587443946188341
+      },
+      {
+        "area": 2233,
+        "bounds_px": [
+          571,
+          423,
+          623,
+          477
+        ],
+        "name": "right_eye",
+        "center": [
+          0.23766816143497757,
+          0.23542600896860988
+        ],
+        "width": 0.11883408071748879,
+        "height": 0.12331838565022421
+      }
+    ],
+    "eye_center_spacing": 0.4674887892376681,
+    "eye_spacing_to_body_width": 0.3498322147651006
+  },
+  "model_assumptions": [
+    "front width and side depth normalized separately by height",
+    "elliptical horizontal sections",
+    "lowest 10% inferred with convex C2 contact curve"
+  ],
+  "crown_requirements": {
+    "static": "continuous crown-to-shoulder curvature; no attached cap, crease, fixed tilt or pinched neck",
+    "motion": "softer crown with delayed inertial recovery, smoothly coupled to the shoulder/belly; tune after static mesh approval",
+    "continuity_band": [
+      0.65,
+      0.95
+    ],
+    "band_note": "inspection region, not an anatomical seam or independently moving mesh"
+  },
+  "reference": "public/reference/approved-turnaround.png",
+  "status": "measured static refinement; awaiting user visual approval"
+}

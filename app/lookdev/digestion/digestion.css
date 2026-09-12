@@ -1,0 +1,111 @@
+.digestion-study .color-heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 18px;
+  margin-bottom: 20px;
+}
+.digestion-study .color-heading h1 {
+  font-size: clamp(42px, 5vw, 74px);
+}
+.digestion-study .absorption-canvas {
+  height: clamp(400px, 54vh, 680px);
+}
+.digestion-study .absorption-caption {
+  font-size: 14px;
+}
+.digestion-study .color-heading p,
+.digestion-study .color-back,
+.digestion-study .absorption-note p {
+  font-size: 14px;
+}
+.digestion-panel {
+  max-width: 1440px;
+  margin: 22px auto 0;
+  font-size: 14px;
+}
+.digestion-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.digestion-panel button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: 1px solid #dedcd5;
+  border-radius: 8px;
+  background: #faf9f6;
+  color: #434a3e;
+  cursor: pointer;
+}
+.digestion-panel button[aria-pressed='true'] {
+  background: #e7ede3;
+  border-color: #89967d;
+}
+.digestion-panel button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.digestion-panel .absorption-play {
+  background: #353d31;
+  color: white;
+}
+.digestion-panel fieldset {
+  gap: 6px;
+  flex-wrap: wrap;
+  border: 0;
+  padding: 0;
+}
+.digestion-panel i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.digestion-checkpoints {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.digestion-timeline {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 22px 0;
+}
+.digestion-timeline input {
+  flex: 1;
+  min-width: 80px;
+  accent-color: #a07a80;
+}
+.digestion-timeline output {
+  font-variant-numeric: tabular-nums;
+  min-width: 60px;
+}
+.digestion-footnote {
+  color: #828779;
+  margin-top: 18px;
+}
+@media (max-width: 650px) {
+  .digestion-checkpoints {
+    margin-left: 0;
+  }
+  .digestion-study .color-heading > p {
+    display: none;
+  }
+  .digestion-row {
+    gap: 8px;
+  }
+  .digestion-panel button {
+    padding: 10px;
+  }
+  .digestion-study .absorption-note {
+    bottom: 64px;
+  }
+  .digestion-study .absorption-camera {
+    bottom: 14px;
+  }
+}

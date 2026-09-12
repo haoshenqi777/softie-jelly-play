@@ -1,0 +1,188 @@
+{
+  "engine": "Cycles",
+  "backend": "GPU",
+  "devices": [
+    "NVIDIA GeForce RTX 4070 Ti"
+  ],
+  "sourceBlendSHA256": "bda76f9193f52c6b414579e25d9a6bfda88cfc484b86e544a8826f64f0480bab",
+  "sourceGLBSHA256": "ca20242aaaeab5b25aeaa0f9a49761173e91ba967fce607e3e95c08c1a1c7d0b",
+  "bodyVertices": 19202,
+  "bubbleCount": 158,
+  "recipe": {
+    "revision": "physical-08",
+    "resolution": [
+      768,
+      720
+    ],
+    "samples": 128,
+    "seed": 24,
+    "surface": {
+      "ior": 1.36,
+      "roughness": 0.025
+    },
+    "volume": {
+      "absorption": [
+        0.05,
+        0.65,
+        0.59
+      ],
+      "scattering": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "anisotropy": 0.3
+    },
+    "world": {
+      "color": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "strength": 1.2
+    },
+    "lights": [
+      {
+        "name": "Left softbox",
+        "position": [
+          -3.7,
+          3.8,
+          4
+        ],
+        "size": [
+          2.0,
+          2.8
+        ],
+        "energy": 700
+      },
+      {
+        "name": "Right strip",
+        "position": [
+          4,
+          3.2,
+          2
+        ],
+        "size": [
+          1.3,
+          3.4
+        ],
+        "energy": 900
+      },
+      {
+        "name": "Rear rim",
+        "position": [
+          -1,
+          3.5,
+          -4
+        ],
+        "size": [
+          3.8,
+          2.5
+        ],
+        "energy": 1100
+      }
+    ],
+    "floor": {
+      "color": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "roughness": 0.28
+    },
+    "eye": {
+      "color": [
+        0.0012,
+        0.0012,
+        0.0015
+      ],
+      "roughness": 0.12,
+      "coat": 0,
+      "specular": 0.12
+    },
+    "camera": {
+      "fovY": 30,
+      "pitch": 0.12,
+      "targetY": 0.9,
+      "framingScale": 1.06
+    },
+    "views": [
+      {
+        "name": "front",
+        "yaw": 0,
+        "pose": "rest"
+      },
+      {
+        "name": "three-quarter",
+        "yaw": -0.5,
+        "pose": "rest"
+      },
+      {
+        "name": "side",
+        "yaw": -1.5707963267948966,
+        "pose": "rest"
+      },
+      {
+        "name": "squash",
+        "yaw": -0.5,
+        "pose": "squash"
+      }
+    ]
+  },
+  "samples": 128,
+  "colorManagement": "Khronos PBR Neutral",
+  "approximations": [
+    "Air interfaces are spheres inside the gel volume; their tiny interiors do not subtract the body absorption volume.",
+    "Indirect sample clamp is 10 to bound rare fireflies."
+  ],
+  "views": [
+    {
+      "name": "front",
+      "yaw": 0,
+      "pose": "rest",
+      "positionYUp": [
+        0.0,
+        1.8805687960558715,
+        8.132146176400902
+      ],
+      "distance": 8.1910510069313,
+      "renderSeconds": 10.936
+    },
+    {
+      "name": "three-quarter",
+      "yaw": -0.5,
+      "pose": "rest",
+      "positionYUp": [
+        -3.898758560629112,
+        1.8805687960558715,
+        7.136629675152903
+      ],
+      "distance": 8.1910510069313,
+      "renderSeconds": 9.938
+    },
+    {
+      "name": "side",
+      "yaw": -1.5707963267948966,
+      "pose": "rest",
+      "positionYUp": [
+        -8.132146176400902,
+        1.8805687960558715,
+        4.979503392563875e-16
+      ],
+      "distance": 8.1910510069313,
+      "renderSeconds": 8.878
+    },
+    {
+      "name": "squash",
+      "yaw": -0.5,
+      "pose": "squash",
+      "positionYUp": [
+        -3.898758560629112,
+        1.8805687960558715,
+        7.136629675152903
+      ],
+      "distance": 8.1910510069313,
+      "renderSeconds": 9.765
+    }
+  ]
+}
