@@ -9,13 +9,13 @@ Compiler: AssemblyScript 0.28.9. This isolated tool package avoids touching the
 site's shared `node_modules` junction. From the site directory:
 
 ```sh
-pnpm --dir tools/wasm-compiler --ignore-workspace install --ignore-scripts
+bun install --cwd tools/wasm-compiler --frozen-lockfile --ignore-scripts
 node tools/wasm-compiler/build.mjs
 node --test tests/softbody-wasm.test.mjs
 ```
 
-On this Windows host pnpm's package download failed. `node
-tools/wasm-compiler/bootstrap.mjs` is an alternative installer that fetches
+If registry downloads fail, `node tools/wasm-compiler/bootstrap.mjs`
+is an alternative installer that fetches
 three pinned official npm packages, checks their registry SHA-512 integrity,
 validates archive entry paths and extracts them under this tool directory.
 The compiler is not shipped to browsers; the small compiled kernel is.

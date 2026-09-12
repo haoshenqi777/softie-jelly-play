@@ -20,26 +20,26 @@
 
 ## 本地运行
 
-需要 Node.js 22.13 及以上版本和 pnpm；运行 TypeScript 测试建议使用 Node.js 24。
+需要 Bun 1.4.2（版本固定在 `.bun-version`）和 Node.js 24。Bun 管理依赖和脚本；构建工具及现有测试继续使用 Node.js。
 
 ```sh
 git clone https://github.com/haoshenqi777/softie-jelly-play.git
 cd softie-jelly-play
-pnpm install --frozen-lockfile
-pnpm dev
+bun install --frozen-lockfile
+bun run dev
 ```
 
 打开终端显示的本地地址。WebGPU 需要浏览器支持及图形加速，并通过 HTTPS 或 localhost 访问。模型和纹理已经包含在仓库中，日常运行不需要 Blender。
 
 ```sh
 # 类型检查
-pnpm exec tsc --noEmit
+bun run typecheck
 
 # 生产构建
-pnpm build
+bun run build
 
 # 预览构建后的 Worker
-pnpm start
+bun run start
 ```
 
 ## 测试
@@ -47,13 +47,13 @@ pnpm start
 快速检查本次手机视角与输入功能：
 
 ```sh
-node --experimental-transform-types --test tests/mobile-experience.test.mjs tests/touch-takeover.test.mjs
+bun run test:smoke
 ```
 
 完整回归包含耗时较长的真实软体及进食模拟：
 
 ```sh
-node --experimental-transform-types --test tests/*.test.mjs
+bun run test
 ```
 
 具体版本的验证范围与设备限制记录在 `docs/verification/`。第 17 版记录见 [手机交互验证](docs/verification/2026-09-12-mobile-interaction.md)。
@@ -72,7 +72,9 @@ node --experimental-transform-types --test tests/*.test.mjs
 | `tools/wasm-compiler/` | 可选的物理内核编译源码 |
 | `tests/` | 输入、物理、材质、进食与回归测试 |
 
-项目使用 React、TypeScript、vinext 和 Cloudflare Worker 构建工具。依赖版本由 `pnpm-lock.yaml` 固定；第三方许可说明位于 `third-party-licenses/`。
+项目使用 React、TypeScript、vinext 和 Cloudflare Worker 构建工具。依赖版本由 `bun.lock` 固定；第三方许可说明位于 `third-party-licenses/`。
+
+GitHub Actions 在推送到 `main` 和提交 PR 时使用 Bun 执行冻结安装、类型检查、快速回归和生产构建。`bun run test` 调用现有 Node 测试运行器；请勿用 `bun test` 替代。
 
 ## 部署
 

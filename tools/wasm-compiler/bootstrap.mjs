@@ -1,4 +1,4 @@
-// Optional compiler bootstrap for hosts where pnpm's fetch transport fails.
+// Optional compiler bootstrap for hosts where the package manager's fetch transport fails.
 // Packages are pinned, integrity-checked and extracted only under this tool.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
